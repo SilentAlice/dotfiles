@@ -1,0 +1,25 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = SilentAlice
+	email = yumingwu233@gmail.com
+[merge]
+	tool = vimdiff
+
+[http] 
+        proxy=http://127.0.0.1:1087
+
+[https]
+        proxy=https://127.0.0.1:1087
+
+[alias]
+        ignored = !git ls-files -v | grep "^[[:lower:]]"
+        unchange = !git update-index --assume-unchanged
+
+#[sendmail]
+#        smtpencryption = 
+#        smtpdomain =
+#        smtpserver =
+#        smtpserverport = 
+#        smtpuser = 
+#        supresscc = all
