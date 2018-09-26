@@ -10,9 +10,17 @@ if has ("unix")
 		let $PATH='/usr/local/bin/:' .$PATH
 	endif
 
-else 
+else
 	" Win32 or other so, set toolkit path
 	let g:ex_toolkit_path = $EX_DEV.'/tools/exvim/toolkit'
+endif
+
+" Move swp file to tmp
+" win32 with gvim dont have tmp
+if has ("win32")
+        set directory=~/vimfile/swap/
+else
+        set directory=~/tmp,/tmp
 endif
 
 " This line should not be removed as it ensures that various options are
@@ -26,7 +34,7 @@ execute pathogen#infect()
 "call pathogen#incubate("after")
 
 """"""""""""""""""""""""""""""""""""""General""""""""""""""""""""""""""""""
-" Close 
+" Close vim bells
 set vb t_vb=
 
 " Case insensitive
@@ -50,14 +58,7 @@ set autoread
 " Load indentation rules and plugins according to the detected filetype.
 filetype plugin indent on
 
-" Move swp file to tmp
-" win32 with gvim dont have tmp
-if has ("win32")
-        set directory=~/vimfile/swap/
-else
-        set directory=~/tmp,/tmp
-endif
-
+""""""""""""""""""""""""""""""""VIM Path"""""""""""""""""""""""""""""""""""
 " For linux file structures so we can gf
 set path=$PWD
 set path+=$PWD/include
@@ -65,14 +66,14 @@ set path+=$PWD/kernel/include
 
 """"""""""""""""""""""""""""""""Indent""""""""""""""""""""""""""""""""""""""
 " Use ~/.vim/after/ftplugin/*.vim to define this
+
 " Delete all tail spaces
 nnoremap <silent><F7> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 """"""""""""""""""""""""""""""""Own filetype""""""""""""""""""""""""""""""""
-au BufRead,BufNewFile *.txt    set filetype=txt	
+au BufRead,BufNewFile *.txt    set filetype=txt
 au BufRead,BufNewFile *.tex    set filetype=tex
-"au BufRead,BufNewFile *.rs     set filetype=rs
-
+"au BufRead,BufNewFile *.rs    set filetype=rs
 
 """"""""""""""""""""""""""""""Paste and Clipboard"""""""""""""""""""""""""""
 " Set default clipboard is system clipboard(Avaliable in Mac)
@@ -83,7 +84,6 @@ set clipboard=unnamedplus
 " Yank/Copy use +reg(unnamedplus)
 " Visual/Insert/Normal mode Non-Recursive MAP
 vnoremap y "+y
-" vnoremap d "*d
 nnoremap yy "+Y
 nnoremap Y "+Y
 
@@ -107,23 +107,31 @@ if has("syntax")
 endif
 
 " Enable folding
-set fdm=manual
+" set fdm=manual
+set foldmethod=syntax
+set foldlevelstart=99
 "set nofen
 "set fdl=0
+
 " Use spaces instead tab
 set expandtab
+
 " Tab is 4 width
+set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+
 " Show matching brackets.
-set showmatch		
+set showmatch
+
 " Let backspace work like in other program
 set backspace=2
+
+" Mark space and tab
 set listchars=tab:>-,trail:-,extends:#,nbsp:-
 set list
 
 "imap <C-H> <Left><Del>
-
 """""""""""""""""""""""""""""""""""""MultiWindows"""""""""""""""""""""""
 " Always show status of last window
 set laststatus=2
@@ -143,14 +151,14 @@ noremap <C-l> <C-w>l
 
 """""""""""""""""""""""""""""""""""""Command Line"""""""""""""""""""""""""""
 " Show (partial) command in status line.
-set showcmd		
+set showcmd
 
 " Show current vim mode
 set showmode
 
 """""""""""""""""""""""""""""""""""""Search"""""""""""""""""""""""""""""""
 " Incremental search
-set incsearch		
+set incsearch
 
 "Highlight Search"
 set hlsearch
@@ -174,7 +182,7 @@ if &term=="xterm"
 	set t_Sf=^[[3%dm
 endif
 
-""""""""""""""""""""""""""""""(Silent Alice TODO)saTODO"""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""(Silent Alice TODO)"""""""""""""""""""""""""""""
 "syn keyword   saTodo  contained  saTODO: saFIXME:
 "syn match       saTodo  display contained "\\\(saTODO\|saFIXME\)"
 "syn match saTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX):/
@@ -202,9 +210,17 @@ nnoremap <silent><leader>b :TagbarToggle<cr>
 " syntastic close location list
 nnoremap <silent><leader>l :lclose<cr>
 
+""""""""""""""""""""""""""""" CTags """"""""""""""""""""""""""
+"For ctags, so it can find 'tags' file even not in current directory
 
-"""""""""""""""""""""""""""""""""""""Ctags""""""""""""""""""""""""""""""""""""""
-" In each file type
+nmap <F6>a :!ctags -R --c++-kinds=+p --fields=+aimS --extra=+q .<CR><CR>:!cscope -Rb<CR><CR>:!ftags<CR>
+nmap <F6>t :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nmap <F6>c :!cscope -Rb<CR>
+nmap <F6>f :!ftags<CR>
+
+set tags=tags
+""""""""""""""""""""""""""""""Lookupfile"""""""""""""""""""""""""""""""""""
+let g:LookupFile_TagExpr = string('./filenametags')
 
 """""""""""""""""""""""""""""""""OmniCppComplete""""""""""""""""""""""""""""""""
 "-- omnicppcomplete setting --
@@ -219,7 +235,7 @@ nnoremap <silent><leader>l :lclose<cr>
 "补全宏定义                      CTRL-X CTRL-D
 "补全vim命令                     CTRL-X CTRL-V
 "用户自定义补全方式              CTRL-X CTRL-U
-"拼写建议                        CTRL-X CTRL-S 
+"拼写建议                        CTRL-X CTRL-S
 imap <F3> <C-X><C-O>
 " 按下F2根据头文件内关键字补全
 imap <F2> <C-X><C-I>
@@ -236,17 +252,7 @@ let OmniCpp_DefaultNamespaces=["std"]
 let OmniCpp_ShowScopeInAbbr=1 " show scope in abbreviation and remove the last column
 let OmniCpp_ShowAccess=1
 
-""""""""""""""""""""""""""""""""""""""TagList"""""""""""""""""""""""""""""""""""""
-"-- Taglist setting --
-let Tlist_Ctags_Cmd='ctags' " Install ctags first
-let Tlist_Use_Right_Window=0 " 0:left 1:right
-let Tlist_Show_One_File=0
-let Tlist_File_Fold_Auto_Close=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_Process_File_Always=1 " Update lively
-let Tlist_Inc_Winwidth=0
 """""""""""""""""""""""""""""""""CtrlP"""""""""""""""""""""""""""""""""""""
-let g:ctrlp_map = '<F5>'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -257,9 +263,14 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 
 """"""""""""""""""""""""""""""""EchoFunctions"""""""""""""""""""""""""""""""""""
-" Use Alt + -/=
-let g:EchoFuncKeyPrev='–'
-let g:EchoFuncKeyNext='≠'
+" Only mac can Alt + -/= successfully
+if has ("mac")
+        let g:EchoFuncKeyPrev='–'
+        let g:EchoFuncKeyNext='≠'
+else
+        let g:EchoFuncKeyPrev='<PageUp>'
+        let g:EchoFuncKeyNext='<PageDown>'
+endif
 set statusline+=%{EchoFuncGetStatusLine()}
 
 """""""""""""""""""""""""""""""""""""Syntastic"""""""""""""""""""""""""""""""""""""
@@ -282,15 +293,6 @@ let g:syntastic_quiet_messages = {
 """"""""""""""""""""""""""""""""""""Markdown"""""""""""""""""""""""""""""""""""""
 let g:instant_markdown_slow = 1
 
-""""""""""""""""""""""""""""""""""""Vim-Latex"""""""""""""""""""""""""""""""""""""
-"" win32 shoud set shellslash
-"let g:tex_flavor='latex'
-"set grepprg=grep\ -nH\ $*
-"
-"" C-J is maped by vim-latex, change this
-"imap <C-M> <Plug>IMAP_JumpForward
-"nmap <C-M> <Plug>IMAP_JumpForward
-
 """"""""""""""""""""""""""""""""""""View"""""""""""""""""""""""""""""""""""""""""
 " This part is moved to after/ftplugin/c, cpp
 " View is automically saved in ~/.vim/view/
@@ -304,13 +306,7 @@ let g:slime_target = "tmux"
 
 " Maybe text can't sent through STDIN directly, Then use a file:
 "let g:slime_paste_file = \"$HOME/.slime_paste\"
-" or 
+" or
 "let g:slime_paste_file = tempname()
 "
-
-"""""""""""""""""""""""""""""""""""OPAM+Merlin""""""""""""""""""""""""""""""""
-"let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-"execute "set rtp+=" . g:opamshare . "/merlin/vim"
-"execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
-"let g:syntastic_ocaml_checkers = ['merlin']
 
