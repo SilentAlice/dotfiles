@@ -1,11 +1,9 @@
 SilentAlice's dotfile
 
-Each branch is a config
-
-To use it, clone specific branch:
+tmux config
 
 ```
-git clone --single-branch -b configname https://github.com/SilentAlice/dotfiles ~/.configname
-cd ~/.configname
-cp .confignamerc ~/
+git clone --single-branch -b tmux https://github.com/SilentAlice/dotfiles
+cd dotfiles
+cp .tmux.conf ~/
 ```
