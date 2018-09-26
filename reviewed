@@ -1,0 +1,2 @@
+#!/bin/sh
+GIT_EDITOR='git interpret-trailers --trailer "Reviewed-by: $(git config user.name) <$(git config user.email)>" --in-place' git commit --amend

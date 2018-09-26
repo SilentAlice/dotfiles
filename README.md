@@ -1,11 +1,10 @@
 SilentAlice's dotfile
 
-Each branch is a config
+Some personal scripts and bin files
 
-To use it, clone specific branch:
+- `boom`: Shutdown computer in a force way
+- `acked`: Add `Acked-by` in your latest commit
+- `reviewed`: Add `Reviewed-by` in your latest commit
+- `sync.sh`: Sync file using `rsync`
 
-```
-git clone --single-branch -b configname https://github.com/SilentAlice/dotfiles ~/.configname
-cd ~/.configname
-cp .confignamerc ~/
-```
+You can fetch them in one file and add this in your `$PATH`
