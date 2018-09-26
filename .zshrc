@@ -1,5 +1,5 @@
 # ##################### Path to your oh-my-zsh installation.
-  export ZSH=/Users/alice/.oh-my-zsh
+ export ZSH=/Users/alice/.oh-my-zsh
 
 # ############################ Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -52,6 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git z d zsh-autosuggestions thefuck zsh-syntax-highlighting)
+#plugins=(git z d thefuck zsh-syntax-highlighting)
 
 # User configuration
 
@@ -86,19 +87,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux="tmux -2"
-alias find="gfind"
-alias objdump="gobjdump"
-alias jkprev="bundle exec jekyll serve"
+#alias find="gfind"
+#alias objdump="gobjdump"
+#alias jkprev="bundle exec jekyll serve"
 eval $(thefuck --alias)
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:/Library/TeX/texbin" # Add Latex bins
-export PATH="$PATH:/Users/alice/.cargo/bin/" # Add Rust bins
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:/Library/TeX/texbin" # Add Latex bins
+#export PATH="$PATH:/Users/alice/.cargo/bin/" # Add Rust bins
 
 # Rust
-export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+#export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

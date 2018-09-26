@@ -1,67 +1,10 @@
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
 
-[submodule "bundle/rust.vim"]
-	path = bundle/rust.vim
-	url = https://github.com/rust-lang/rust.vim
-[submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
-[submodule "bundle/vim-gitgutter"]
-	path = bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
-[submodule "bundle/vim-repeat"]
-	path = bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = https://github.com/majutsushi/tagbar
-[submodule "bundle/echofunc"]
-	path = bundle/echofunc
-	url = https://github.com/mbbill/echofunc
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree
-[submodule "bundle/nerdtree-git-plugin"]
-	path = bundle/nerdtree-git-plugin
-	url = https://github.com/Xuyuanp/nerdtree-git-plugin
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
-[submodule "bundle/vim-nerdtree-tabs"]
-	path = bundle/vim-nerdtree-tabs
-	url = https://github.com/jistr/vim-nerdtree-tabs
-[submodule "bundle/vim-slime"]
-	path = bundle/vim-slime
-	url = https://github.com/jpalardy/vim-slime
-[submodule "bundle/lookupfile"]
-	path = bundle/lookupfile
-	url = https://github.com/vim-scripts/lookupfile
-[submodule "bundle/AutoComplPop"]
-	path = bundle/AutoComplPop
-	url = https://github.com/vim-scripts/AutoComplPop
-[submodule "bundle/FuzzyFinder"]
-	path = bundle/FuzzyFinder
-	url = https://github.com/vim-scripts/FuzzyFinder
-[submodule "bundle/L9"]
-	path = bundle/L9
-	url = https://github.com/vim-scripts/L9
-[submodule "bundle/OmniCppComplete"]
-	path = bundle/OmniCppComplete
-	url = https://github.com/vim-scripts/OmniCppComplete
-[submodule "bundle/cscope_maps"]
-	path = bundle/cscope_maps
-	url = https://github.com/chazy/cscope_maps
-[submodule "bundle/delview"]
-	path = bundle/delview
-	url = https://github.com/vim-scripts/delview
-[submodule "bundle/genutils"]
-	path = bundle/genutils
-	url = https://github.com/vim-scripts/genutils
-[submodule "bundle/grep.vim"]
-	path = bundle/grep.vim
-	url = https://github.com/vim-scripts/grep.vim
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "zsh-syntax-highlighting"]
+	path = zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh-autosuggestions"]
+	path = zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
