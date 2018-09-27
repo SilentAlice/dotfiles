@@ -1,11 +1,11 @@
 SilentAlice's dotfile
 
-Each branch is a config
+Modify .gitconfig and copy it to your ~/
 
-To use it, clone specific branch:
+smtp config is used for `git send-email`, You need to install this first
 
 ```
-git clone --single-branch -b configname https://github.com/SilentAlice/dotfiles ~/.configname
-cd ~/.configname
-cp .confignamerc ~/
+git clone --single-branch -b configname https://github.com/SilentAlice/dotfiles
+cd dotfiles
+cp .gitconfig ~/
 ```
