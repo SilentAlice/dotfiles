@@ -1,0 +1,87 @@
+# vim:ft=muttrc
+
+# this file is meant to be sourced from the main mutt configuration file
+# Signed-off-by SilentAlice <yumingwu233@gmail.com>
+
+#set index_format = "%[%b %d %H:%M]     %-15.15L    %?M?<%03M> &        ?%s"
+#set status_format = "%f (%s) (%?V?limited to '%V' &no limit pattern?) (%P)"
+set menu_scroll
+set editor = vim
+
+# Vim-like keybindings
+#
+## Index ##
+
+bind index \Cr imap-fetch-mail # Refresh
+
+bind index j next-entry
+bind index k previous-entry
+bind index J next-thread
+bind index K previous-thread
+
+bind index / search
+bind index ? search-reverse
+bind index n search-next
+bind index N search-opposite
+
+bind index gg first-entry
+bind index G last-entry
+
+bind index \Cd half-down
+bind index \Cu half-up
+
+bind index za collapse-thread
+bind index zA collapse-all
+
+bind index r reply
+bind index a group-reply
+bind index L list-reply
+
+bind index \Cb previous-page
+bind index \Cf next-page
+
+bind index zz current-middle
+bind index zt current-top
+bind index zb current-bottom
+
+bind index \Ct sidebar-toggle-visible
+
+bind index h limit
+
+# ? is used for search-opposite
+bind index \Ch help
+
+# Always start with all threads collapsed and with the most recent thread selected
+push <collapse-all><last-entry>
+
+### Pager
+
+bind pager j next-line
+bind pager k previous-line
+
+# The mouse wheel seems to send <up><up><up>/<down><down><down> by default with GNOME terminal.
+# Use it to scroll through message
+bind pager <down> next-line
+bind pager <up> previous-line
+
+bind pager / search
+bind pager ? search-reverse
+bind pager n search-next
+bind pager N search-opposite
+
+bind pager gg top
+bind pager G bottom
+
+bind pager \Cd half-down
+bind pager \Cu half-up
+
+bind pager r reply
+bind pager a group-reply
+bind pager L list-reply
+
+bind pager \Cf next-page
+bind pager \Cb previous-page
+
+# '?' is used for search-opposite
+bind pager \Ch help
+

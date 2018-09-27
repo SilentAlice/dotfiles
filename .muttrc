@@ -1,0 +1,213 @@
+### Mail Box General Setting ###########################################
+#
+# Set mail folder, All emails are stored in some dir of ${folder}
+set folder = ~/Mail/
+
+# Set mailbox type
+# this will create cur, tmp and new subdir
+set mbox_type = maildir
+
+# + and = both stand for ${folder}
+set mbox = "+inbox"
+
+# set record(sent) mailbox dir
+set record = "+record"
+
+# Set "save for future sending" mailbox dir
+set postponed = "+postponed"
+
+# Tell mutt which folder is mailbox so that it will inform us
+mailboxes +inbox
+
+# Spoolfile is unfiletered mails
+set spoolfile = "+inbox"
+
+# See all headers in vim
+set edit_headers = yes
+
+# Run sendmail in background
+set sendmail_wait = -1
+
+# Prevent mutt from endlessly asking when you quit:
+# Move read messages to ~/mbox? ([no]/yes):"
+set move = no
+
+# tmp dir
+set tmpdir = ~/.mutt/tmp
+
+# Quit?
+set quit = ask-yes
+
+# Reply will contain original text
+set include
+
+# quote reference
+set indent_str = "> "
+
+# Sort as thread and date
+# set sort = score
+set sort = threads
+set sort_browser = reverse-date
+set sort_aux = reverse-last-date-received
+
+# fast_reply(default_no)
+# When set, the inital prompt for recipients and subjects are skipped
+# whe replying to messages, and the initial prompt for subject is skipped, so as forwading
+set fast_reply
+
+# Charset 
+set charset = "utf-8"
+
+# send chartset
+set send_charset = "us-ascii:utf-8:iso-8859-1:gb18030"
+
+# Pager show 4 lines
+set pager_index_lines = 4
+
+set mark_old = yes
+
+# Attachment
+auto_view text/html
+alternative_order text/plain text/html
+
+### Control Setting ################################################
+# Will not return to first page after we reach last one
+set pager_stop = yes
+
+# Move cursor when delete mail
+set resolve = yes
+
+## These are setting for 'git am' directly from mutt ##
+# pipe_split (default_no)
+# pipe the tagged mails one by one, rather than concat them as one single file
+set pipe_split = yes
+
+# auto_tag(default_no)
+# run function for tagged mails rather than current mail
+# (current mail is the mail under cursor)
+# if set no, you need to press ';' to switch the function target
+set auto_tag = yes
+
+# Using vim key-binding
+source ~/.mutt/vim-keybinding.muttrc
+
+### Account Setting ####################################################
+# set realname = "Yuming Wu"
+# set from = "wuyuming3@huawei.com"
+# set use_from = yes
+set realname = "Silent Ming"
+set from = "yumingwu233@gmail.com"
+set use_from = yes
+# my_hrd From: yumingwu233@gmail.com
+# my_hrd From: wuyuming3@huawei.com
+
+## Setting for gmail ##
+set imap_user = "yumingwu233@gmail.com"
+#set imap_pass = "Your passwd"
+
+# Remote folder; When using imap protocal,
+# we can retrive remote folder directly.
+# This setting will override the folder variable above
+set folder = "imaps://imap.gmail.com:993"
+# You can specify "+INBOX/Filted" and let your mutt only open these filted mails 
+# (e.g. patches).
+set spoolfile = "+INBOX"
+mailboxes = +INBOX
+set postponed = "+[Gmail]/Drafts"
+
+# Allow mutt create remote imap connecting automically
+unset imap_passive
+
+# Imap max active time
+set imap_keepalive = 300
+
+# Check mail every xxx time
+set mail_check = 120
+
+# Local cache dir
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+
+# TLS verification
+set certificate_file = ~/.certs/gmail.imap.server.pem
+
+
+# set internal smtp, We will not use internal one
+#set smtp_url = "smtps://username@gmail.com@smtp.gmail.com:465/"
+#set smtp_pass = "your password"
+#set ssl_starttls = yes
+
+# Use msmtp instead
+set sendmail = "/usr/bin/msmtp -v"
+
+# Reply will not include header
+set header = no
+
+# Set my_hdr
+# my_hdr From: yumingwu233@gmail.com
+#
+# Mutt pass ${from} field via the ${sendmail}'s -f option
+# envelope_from = yes will lets Mutt use the -f option of msmtp, so that msmtp chooses 
+# the first account that matches the from address you@example.com
+# Alternatively, you can use -a option:
+# set sendmail = "/path/to/msmtp -a my-account"
+# Or set everything from the command line (Can not set passwd this way)
+set envelope_from = yes
+
+# Get mail
+# macro index G "!mbsync -a\n"
+# macro index G "!mbsync -a\n"
+
+### Score #####################################################3
+#set score_threshold_delete=0    # delete messages with score 0
+#set score_threshold_flag=50     # auto-flag messages w/ score >= 50
+#set score_threshold_read=5      # mark messages w/ score <= 5 as read
+#
+#score "~A"              +10         # All message starts at 10
+#score "~g|~G"           +2          # PGP encrypted message        
+#score "~F"              +20         # Flag mail are important
+#score "~N"              +4
+#score "~s 通知" +2
+#score "~D" -5                       # Deleted mail
+#score "~O" +1
+#score "~s believe" -10
+#
+## The good one ;)
+#score '~t strcat@gmx.net'                                       +2     # i'm quite important
+#score '~s painless'                                             +1     # Backup-Daemon ;)
+#score '~s Wetter'                                               +1     # <http://www.donnerwetter.de/>
+#score '~s ahog | ~s FAQ'                                        +1     # Flames / Hints / Questions about the FAQ
+#score '~s viktor.pfafenrot@web.de'                              +1     # FAQ - /Maintainer/
+#score '~f @neessen.net'                                         +1     # 42.
+#score '(~f @buug.de) |(~f @bzimage.de)'                         +1     # <http://www.buug.de/>
+#score '~x bofh.my-fqdn.de'                                      +1     # Reply on an Usenet - Posting
+#score '(~f @bar-one.de) | (~f @cabaro.de)'                      +2     # 3D!!!111! ;)
+#score '(~f @mnet-online.de) | (~f katzze@swissinfo.org)'        +2     # 3D!!!111! ;)
+#score '~f @lddd.org'                                            +2     # J-E-H-O-V-A!!!11! *g*
+#
+## SPAM
+#score '~f @aol.com'                                             -5   # I HATE AOL!
+#score '~f webmaster@*'                                          -5   # Webmasters kidnapped by evil cult :>
+#score '~s ^test$'                                               -5   # all messages w/ subject "test" are killed
+#score '~f anonymous'                                            -5   # Yeah. Sure. Evil hackers from Serbia.
+#score '~='                                                      -5   # all duplicates are killed
+#score '~s ^unsubscribe$ !(~p|~P|~Q|~F)'                         -5   # all msgs w/ subject "unsubscribe" not by myself are killed
+#score '!~f@'                                                    -5   # no mail address present?
+#score "~f '^([^ <>@]+ ){5,}'"                                   -5   # a realname consisting of >=5 portions is invalid, too
+
+# Tell mutt which is maillist
+subscribe lwn@lwn.net
+
+# Use solarized colors
+source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+
+# Diff color in mutt, to support in-place patch review
+color body blue     default "^---$"
+color body red      default "^--- a.*$"
+color body green    default "^[+]{3} b.*$"
+color body red      default "^-($|[^-].*$)"
+color body green    default "^[+].*$"
+color body yellow   default "^@@ .* @@"
+
+set quote_regexp = "^([ \t]*[|>:])+"
+
