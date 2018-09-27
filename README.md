@@ -1,11 +1,5 @@
 SilentAlice's dotfile
 
-Each branch is a config
+iTerm2 config
 
-To use it, clone specific branch:
-
-```
-git clone --single-branch -b configname https://github.com/SilentAlice/dotfiles ~/.configname
-cd ~/.configname
-cp .confignamerc ~/
-```
+Load this config in your iterm2 perference. Full screen and can use ctrl `Command + U` to toggle semitransparent
