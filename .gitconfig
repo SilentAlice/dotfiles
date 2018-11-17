@@ -16,9 +16,7 @@
 
 # Ignore some file, or assume some file is not changed in this commit
 [alias]
-        ignored = !git ls-files -v | grep "^[[:lower:]]"
-        unchange = !git update-index --assume-unchanged
-        rechange = !git update-index --no-assume-unchanged
+        rstauth = !git commit --amend --reset-author
 
 [sendemail]
         smtpencryption
