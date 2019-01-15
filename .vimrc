@@ -37,9 +37,6 @@ execute pathogen#infect()
 " Close vim bells
 set vb t_vb=
 
-" Case insensitive
-set ignorecase
-
 " Get out of vi mode"
 set nocompatible
 
@@ -105,9 +102,13 @@ endif
 
 " Enable folding
 " set fdm=manual
+
+" Folding use default syntax
 set foldmethod=syntax
-set foldlevelstart=99
 "set nofen
+
+" Default don't fold them
+set foldlevelstart=99
 "set fdl=0
 
 " Use spaces instead tab
@@ -160,6 +161,10 @@ set incsearch
 "Highlight Search"
 set hlsearch
 
+"Use smartcase instead
+"set ignorecase
+set smartcase
+
 "nnoremap <F4> :Rgrep --include="*.c" --include="*.h" --include="*.S"<CR>
 nnoremap <F4> :Rgrep --exclude="*.o" --exclude="*.a" --exclude="*.out"<CR>
 
@@ -168,7 +173,6 @@ nnoremap <F4> :Rgrep --exclude="*.o" --exclude="*.a" --exclude="*.out"<CR>
 noremap <F12> :call Toggle_Paste_Mode()<CR>
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-"set ignorecase		" Do case insensitive matching
 "set smartcase		" Do smart case matching
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandonedo
@@ -306,4 +310,3 @@ let g:slime_target = "tmux"
 " or
 "let g:slime_paste_file = tempname()
 "
-
