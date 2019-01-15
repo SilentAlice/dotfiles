@@ -1,28 +1,29 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-        name = SilentAlice
-        email = yumingwu233@gmail.com
+    name = SilentAlice
+    email = yumingwu233@gmail.com
 [merge]
-        tool = vimdiff
+    tool = vimdiff3
 
 # Using proxy
 [http]
-        proxy=http://127.0.0.1:1087
+    proxy=http://127.0.0.1:1087
 
 [https]
-        proxy=https://127.0.0.1:1087
-        #sslverify = false
+    proxy=https://127.0.0.1:1087
+    #sslverify = false
 
 # Ignore some file, or assume some file is not changed in this commit
 [alias]
-        rstauth = !git commit --amend --reset-author
+    rstauth = !git commit --amend --reset-author --no-edit
+    setauth = !git commit --amend --author='Wu Yuming <yumingwu233@gmail.com>' --no-edit
 
 [sendemail]
-        smtpencryption
-        smtpdomain = huawei.com         # Mine is huawei
-        smtpserver = smtpscn.huawei.com # Your smtp server
-        smtpserverport = 25             # SMTP port
-        smtpuser = Your email account
-        supresscc = all                 # Avoid auto cc all users in your patch
-        #smtppass = Your passwd
+    smtpencryption
+    smtpdomain = huawei.com         # Mine is huawei
+    smtpserver = smtpscn.huawei.com # Your smtp server
+    smtpserverport = 25             # SMTP port
+    smtpuser = Your email account
+    supresscc = all                 # Avoid auto cc all users in your patch
+    #smtppass = Your passwd
