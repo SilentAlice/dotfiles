@@ -168,7 +168,6 @@ nnoremap <F4> :Rgrep --exclude="*.o" --exclude="*.a" --exclude="*.out"<CR>
 
 """"""""""""""""""""""""""""""""""""""Other"""""""""""""""""""""""""""""""
 "Enter or Exit paste mode
-noremap <F11> :call Toggle_Linux_Review()<CR>
 noremap <F12> :call Toggle_Paste_Mode()<CR>
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
