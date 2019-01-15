@@ -83,9 +83,6 @@ set clipboard=unnamedplus
 " Cut/delete use *reg
 " Yank/Copy use +reg(unnamedplus)
 " Visual/Insert/Normal mode Non-Recursive MAP
-vnoremap y "+y
-nnoremap yy "+Y
-nnoremap Y "+Y
 
 """""""""""""""""""""""""""""""""""""Add Chinese""""""""""""""""""""""""""""
 let &termencoding=&encoding
