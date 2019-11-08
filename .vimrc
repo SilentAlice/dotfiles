@@ -183,6 +183,14 @@ if &term=="xterm"
 	set t_Sf=^[[3%dm
 endif
 
+function! BANNER()
+    0r ~/.vim/template/copyright.c
+    language time en_US.UTF-8
+    exe "%s/@TIMESTAMP@/" strftime("%a %b %d %H:%M:%S %Y") "/g"
+endfunction
+autocmd BufNewFile *.c call BANNER()
+autocmd BufNewFile *.h call BANNER()
+
 """"""""""""""""""""""""""""""(Silent Alice TODO)"""""""""""""""""""""""""""""
 "syn keyword   saTodo  contained  saTODO: saFIXME:
 "syn match       saTodo  display contained "\\\(saTODO\|saFIXME\)"
