@@ -90,15 +90,8 @@ alias tmux="tmux -2"
 #alias find="gfind"
 #alias objdump="gobjdump"
 #alias jkprev="bundle exec jekyll serve"
+alias gdh="git show"
 eval $(thefuck --alias)
-
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-#export PATH="$PATH:/Library/TeX/texbin" # Add Latex bins
-#export PATH="$PATH:/Users/alice/.cargo/bin/" # Add Rust bins
-
-# Rust
-#export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
-
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
