@@ -1,0 +1,8 @@
+{
+     "http.proxyStrictSSL": false,
+     "http.proxy": "http://127.0.0.1:11235",
+     "workbench.editor.enablePreview": false,
+     "workbench.editor.enablePreviewFromQuickOpen": false,
+     "terminal.explorerKind": "external",
+     "vim.foldfix": true
+}
