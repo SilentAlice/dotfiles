@@ -5,6 +5,11 @@
     email = yumingwu233@gmail.com
 [merge]
     tool = vimdiff3
+# Save passwd
+[credential]
+    helper = store
+[commit]
+    template = ~/.gitmessage
 
 # Using proxy
 [http]
