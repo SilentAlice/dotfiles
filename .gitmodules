@@ -1,7 +1,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
-
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
@@ -65,3 +64,12 @@
 [submodule "bundle/grep.vim"]
 	path = bundle/grep.vim
 	url = https://github.com/vim-scripts/grep.vim
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "bundle/incsearch-easymotion.vim"]
+	path = bundle/incsearch-easymotion.vim
+	url = https://github.com/haya14busa/incsearch-easymotion.vim
+[submodule "bundle/incsearch.vim"]
+	path = bundle/incsearch.vim
+	url = https://github.com/haya14busa/incsearch.vim
