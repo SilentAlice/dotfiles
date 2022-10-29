@@ -1,6 +1,6 @@
 SilentAlice's dotfile
 
-tmux config
+tmux config worked for 3.1
 
 ```
 git clone --single-branch -b tmux https://github.com/SilentAlice/dotfiles
