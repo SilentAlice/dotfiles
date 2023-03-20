@@ -11,3 +11,6 @@
 [submodule "powerlevel10k"]
 	path = powerlevel10k
 	url = https://gitee.com/romkatv/powerlevel10k.git
+[submodule "fzf-zsh-plugin"]
+	path = fzf-zsh-plugin
+	url = https://github.com/unixorn/fzf-zsh-plugin.git
