@@ -1,13 +1,25 @@
-# ##################### Path to your oh-my-zsh installation.
- export ZSH=/home/alice/.oh-my-zsh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# ############################ Set name of the theme to load.
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+########################## Oh-My-Zsh ############################
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+#ZSH_THEME="mortalscumbag"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-#ZSH_THEME="agnoster"
-ZSH_THEME="mortalscumbag"
+# 256color term
+TERM=xterm-256color
 
 # Case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,27 +63,19 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-autosuggestions thefuck zsh-syntax-highlighting)
-#plugins=(git z d thefuck zsh-syntax-highlighting)
-
-# User configuration
-
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/bin/:/usr/bin:/sbin:/usr/sbin"
-export PATH="$PATH:$HOME/node_modules/.bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-export TERM=xterm-256color
+plugins=(git z d zsh-autosuggestions thefuck zsh-syntax-highlighting fzf-zsh-plugin)
 
 source $ZSH/oh-my-zsh.sh
+######################### Shell Configuration #############################
+# You may need to manually set your language and env
+# export LC_ALL=en_US.UTF-8
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-#Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='vim'
- fi
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -85,15 +89,21 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux="tmux -2"
-#alias find="gfind"
-#alias objdump="gobjdump"
-#alias jkprev="bundle exec jekyll serve"
-alias gdh="git show"
+alias rgf="rg --files | rg"
+alias gdh="git diff HEAD~"
 eval $(thefuck --alias)
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/bin:/usr/local/sbin:/bin/:/usr/bin:/sbin:/usr/sbin"
+
+# Man change the man path is needed
+# export MANPATH="/usr/local/man:$MANPATH"
+#
+# A man bug on Ubuntu 18.04
+# export MAN_DISABLE_SECCOMP=1
+
+# Rust
+# export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+
+# Env params
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
