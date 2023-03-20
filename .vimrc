@@ -50,7 +50,7 @@ set history=400
 set autoread
 
 " Jump to the last position when reopening a file
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Load indentation rules and plugins according to the detected filetype.
 filetype plugin indent on
@@ -146,6 +146,8 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
+noremap <C-l> <C-w><
+noremap <C-l> <C-w>>
 
 """""""""""""""""""""""""""""""""""""Command Line"""""""""""""""""""""""""""
 " Show (partial) command in status line.
