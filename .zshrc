@@ -63,7 +63,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z d zsh-autosuggestions thefuck zsh-syntax-highlighting fzf-zsh-plugin)
+plugins=(git z zsh-autosuggestions thefuck zsh-syntax-highlighting fzf-zsh-plugin)
 
 source $ZSH/oh-my-zsh.sh
 ######################### Shell Configuration #############################
@@ -92,7 +92,7 @@ fi
 alias tmux="tmux -2"
 alias rgf="rg --files | rg"
 alias gdh="git diff HEAD~"
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 export PATH="/usr/local/bin:/usr/local/sbin:/bin/:/usr/bin:/sbin:/usr/sbin"
 
