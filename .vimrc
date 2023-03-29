@@ -272,18 +272,6 @@ let g:ctrlp_custom_ignore = {
             \ }
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-
-""""""""""""""""""""""""""""""""EchoFunctions"""""""""""""""""""""""""""""""""""
-" Only mac can Alt + -/= successfully
-if has ("mac")
-        let g:EchoFuncKeyPrev='–'
-        let g:EchoFuncKeyNext='≠'
-else
-        let g:EchoFuncKeyPrev='<PageUp>'
-        let g:EchoFuncKeyNext='<PageDown>'
-endif
-set statusline+=%{EchoFuncGetStatusLine()}
-
 """""""""""""""""""""""""""""""""""""Syntastic"""""""""""""""""""""""""""""""""""""
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
