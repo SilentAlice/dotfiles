@@ -107,3 +107,4 @@ export PATH="/usr/local/bin:/usr/local/sbin:/bin/:/usr/bin:/sbin:/usr/sbin"
 
 # Env params
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node/
