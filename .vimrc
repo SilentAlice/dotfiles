@@ -146,8 +146,6 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
-noremap <C-l> <C-w><
-noremap <C-l> <C-w>>
 
 """""""""""""""""""""""""""""""""""""Command Line"""""""""""""""""""""""""""
 " Show (partial) command in status line.
