@@ -67,6 +67,11 @@ set path+=$PWD/kernel/include
 " Delete all tail spaces
 nnoremap <silent><F7> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
+" Default using c indent
+setlocal cindent
+setlocal cinoptions=:0,l1,t0,t0,(0
+set autoindent
+
 """"""""""""""""""""""""""""""""Own filetype""""""""""""""""""""""""""""""""
 au BufRead,BufNewFile *.txt    set filetype=txt
 au BufRead,BufNewFile *.tex    set filetype=tex
