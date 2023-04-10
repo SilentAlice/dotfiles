@@ -1,26 +1,26 @@
 " Self Config
 
 if has ("unix")
-	let $EX_DEV='~/.vim'
-	let g:ex_toolkit_path = $HOME. '/.vim/.tookit'
+    let $EX_DEV='~/.vim'
+    let g:ex_toolkit_path = $HOME. '/.vim/.tookit'
 
 " Mac is unix like system, but to use gawk, id-utils correctly, we still need
 " to manually set the export path.
-	if has ("mac")
-		let $PATH='/usr/local/bin/:' .$PATH
-	endif
+    if has ("mac")
+        let $PATH='/usr/local/bin/:' .$PATH
+    endif
 
 else
-	" Win32 or other so, set toolkit path
-	let g:ex_toolkit_path = $EX_DEV.'/tools/exvim/toolkit'
+    " Win32 or other so, set toolkit path
+    let g:ex_toolkit_path = $EX_DEV.'/tools/exvim/toolkit'
 endif
 
 " Move swp file to tmp
 " win32 with gvim dont have tmp
 if has ("win32")
-        set directory=~/vimfile/swap/
+    set directory=~/vimfile/swap/
 else
-        set directory=~/tmp,/tmp
+    set directory=~/tmp,/tmp
 endif
 
 " This line should not be removed as it ensures that various options are
