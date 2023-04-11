@@ -19,6 +19,10 @@
     proxy=https://127.0.0.1:1087
     #sslverify = false
 
+[core]
+    pager = less
+    excludesfile = ~/.gitignore
+
 # Ignore some file, or assume some file is not changed in this commit
 [alias]
     rstauth = !git commit --amend --reset-author --no-edit
