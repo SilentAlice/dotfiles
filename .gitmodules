@@ -1,13 +1,13 @@
 
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+	url = https://gitee.com/mirrors/oh-my-zsh
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://gitee.com/mirrors/zsh-syntax-highlighting.git
 [submodule "zsh-autosuggestions"]
 	path = zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+	url = https://gitee.com/mirrors/zsh-autosuggestions.git
 [submodule "powerlevel10k"]
 	path = powerlevel10k
 	url = https://gitee.com/romkatv/powerlevel10k.git
