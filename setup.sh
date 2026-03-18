@@ -6,13 +6,13 @@ git submodule update
 git submodule sync
 
 # Install plugins
-mv ./zsh-autosuggestions ./.oh-my-zsh/custom/plugins/
-mv ./zsh-syntax-highlighting ./.oh-my-zsh/custom/plugins/
-mv ./fzf-zsh-plugin ./.oh-my-zsh/custom/plugins/
+cp -r ./zsh-autosuggestions ./.oh-my-zsh/custom/plugins/
+cp -r ./zsh-syntax-highlighting ./.oh-my-zsh/custom/plugins/
+cp -r ./fzf-zsh-plugin ./.oh-my-zsh/custom/plugins/
 
 # Install themes
-mv ./powerlevel10k ./.oh-my-zsh/custom/themes/
+cp -r ./powerlevel10k ./.oh-my-zsh/custom/themes/
 
 # install oh-my-zsh
-mv ./.oh-my-zsh/ ~/
-mv ./.zshrc ~/
+cp -r ./.oh-my-zsh ~/
+cp -r ./.zshrc ~/
