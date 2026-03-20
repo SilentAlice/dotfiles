@@ -95,6 +95,7 @@ alias gdh="git diff HEAD~"
 # eval $(thefuck --alias)
 
 export PATH="/usr/local/bin:/usr/local/sbin:/bin/:/usr/bin:/sbin:/usr/sbin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Man change the man path is needed
 # export MANPATH="/usr/local/man:$MANPATH"
