@@ -1,0 +1,38 @@
+{
+  "LOG": true,
+  "LOG_LEVEL": "debug",
+  "HOST": "127.0.0.1",
+  "PORT": 3456,
+  "API_TIMEOUT_MS": "600000",
+  "PROXY_URL": "",
+  "Providers": [
+    {
+      "name": "or",
+      "api_base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key": "sk-or-v1-your-api",
+      "models": [
+        "z-ai/glm-4.7",
+        "minimax/minimax-m2.5",
+        "deepseek/deepseek-v3.2",
+        "moonshotai/kimi-k2.5",
+        "qwen/qwen3-72b",
+        "xiaomi/mimo-v2-pro",
+        "openrouter/hunter-alpha"
+      ],
+      "transformer": {
+        "use": [
+          ["maxtoken", {"max_tokens": 128000}],
+          "enhancetool"
+        ]
+      }
+    }
+  ],
+  "Router": {
+    "default": "or,openrouter/hunter-alpha",
+    "background": "or,openrouter/hunter-alpha",
+    "think": "or,openrouter/hunter-alpha",
+    "longContext": "or,deepseek/deepseek-v3.2",
+    "longContextThreshold": 60000,
+    "webSearch": "or,openrouter/hunter-alpha"
+  }
+}

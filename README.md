@@ -1,11 +1,10 @@
 SilentAlice's dotfile
 
-Each branch is a config
+Configs for vibe-coding (claude, claude-code-router, kimi, etc)
 
-To use it, clone specific branch:
 
 ```
-git clone --single-branch -b configname https://github.com/SilentAlice/dotfiles ~/.configname
-cd ~/.configname
-cp .confignamerc ~/
+git clone --single-branch -b vibe https://github.com/SilentAlice/dotfiles
+
 ```
+Replace it with your api-key
