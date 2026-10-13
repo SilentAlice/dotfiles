@@ -1,1 +1,0 @@
-cp ./.tmux.conf ~/
